@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvf57pwch8c12"]
+
+[ext_resource type="Script" path="res://Scripts/ChessTile.gd" id="1_sybao"]
+[ext_resource type="Texture2D" uid="uid://ddhclxq4h8kph" path="res://Sprites/Board/board3-white.png" id="2_rfoj5"]
+[ext_resource type="FontFile" uid="uid://c4y1cjdm6xvmr" path="res://Fonts/8x8-pixel.ttf" id="3_0dirm"]
+[ext_resource type="Texture2D" uid="uid://cdsqeajo565ct" path="res://Sprites/Board/board-outline.png" id="4_bbjm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ypa8"]
+size = Vector2(16, 16)
+
+[node name="WhiteChessTile" type="Node2D"]
+scale = Vector2(6, 6)
+script = ExtResource("1_sybao")
+tile_type = "White"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rfoj5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_4ypa8")
+
+[node name="Positioning" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.66667
+offset_top = -3.83333
+offset_right = 12.3333
+offset_bottom = 5.16667
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_0dirm")
+theme_override_font_sizes/font_size = 8
+text = "A1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Guide" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(0, -1.5)
+texture = ExtResource("4_bbjm2")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

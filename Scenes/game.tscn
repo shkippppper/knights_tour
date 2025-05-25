@@ -1,0 +1,863 @@
+[gd_scene load_steps=37 format=3 uid="uid://b38crox7gfste"]
+
+[ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_2wr3c"]
+[ext_resource type="Script" path="res://Scripts/BoardLogic.gd" id="1_jfb8w"]
+[ext_resource type="FontFile" uid="uid://c4y1cjdm6xvmr" path="res://Fonts/8x8-pixel.ttf" id="3_0gojf"]
+[ext_resource type="Texture2D" uid="uid://lvci63kp8jdq" path="res://Sprites/UI/undo.png" id="4_8e7mp"]
+[ext_resource type="Texture2D" uid="uid://qwnlkg7f7xwj" path="res://Sprites/Board/board3-export.png" id="5_tf7pn"]
+[ext_resource type="Texture2D" uid="uid://byqi34iyklmb" path="res://Sprites/Board/board1-export.png" id="6_vfqcu"]
+[ext_resource type="Texture2D" uid="uid://djs3e3kfo0k35" path="res://Sprites/Board/board2-export.png" id="7_pto17"]
+[ext_resource type="Texture2D" uid="uid://cskohbrp3watf" path="res://Sprites/Pieces/knight_1.png" id="8_3ysvc"]
+[ext_resource type="Texture2D" uid="uid://dlvxfqq8ei0rj" path="res://Sprites/Pieces/knight_12.png" id="8_thg3o"]
+[ext_resource type="Texture2D" uid="uid://dbr48eectacjq" path="res://Sprites/Pieces/knight_2.png" id="10_7374h"]
+[ext_resource type="Texture2D" uid="uid://vhx1bht6wuej" path="res://Sprites/Pieces/knight_4.png" id="11_304wx"]
+[ext_resource type="Texture2D" uid="uid://c8u67tgjdjkkt" path="res://Sprites/Pieces/knight_3.png" id="11_621h8"]
+[ext_resource type="Texture2D" uid="uid://rwplx4466y84" path="res://Sprites/Pieces/knight_5.png" id="12_nkpn1"]
+[ext_resource type="Texture2D" uid="uid://b584xsevm8jif" path="res://Sprites/Pieces/knight_6.png" id="13_6g5oj"]
+[ext_resource type="Texture2D" uid="uid://istgtajntvhe" path="res://Sprites/Pieces/knight_7.png" id="14_arqp4"]
+[ext_resource type="Texture2D" uid="uid://bbbayb1aghoh0" path="res://Sprites/Pieces/knight_8.png" id="15_oo6ag"]
+[ext_resource type="Texture2D" uid="uid://cafl6besp6ffy" path="res://Sprites/Pieces/knight_9.png" id="16_scvlb"]
+[ext_resource type="Texture2D" uid="uid://6ugr626pusnq" path="res://Sprites/Pieces/knight_10.png" id="17_5e6ec"]
+[ext_resource type="Texture2D" uid="uid://bvcgrtdhp3cpj" path="res://Sprites/Pieces/knight_11.png" id="18_t56qj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go28b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oklgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4xc5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bp5os"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vao24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7ev2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l33gy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choyg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wfsgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhasm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sco1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6v50t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rg7jw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6ht0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oykc8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6btx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7wu5g"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2wr3c")
+
+[node name="Board" type="Node2D" parent="."]
+position = Vector2(475, 101)
+script = ExtResource("1_jfb8w")
+
+[node name="Scores" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_right = 30.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="Scores"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 54.0
+offset_right = 128.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScore" type="Label" parent="Scores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.1
+anchor_right = 2.1
+offset_left = 243.0
+offset_top = 54.0
+offset_right = 298.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.870588, 0.827451, 0, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Score2" type="Label" parent="Scores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.05
+offset_left = 34.0
+offset_top = 54.0
+offset_right = 89.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "S"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScore2" type="Label" parent="Scores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.1
+anchor_right = 2.1
+offset_left = 177.0
+offset_top = 54.0
+offset_right = 232.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.870588, 0.827451, 0, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "HS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ZenButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 1436.0
+offset_top = 71.0
+offset_right = 1589.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "ZEN"
+
+[node name="RestartButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 1296.0
+offset_top = 71.0
+offset_right = 1449.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "RESTART"
+
+[node name="UndoButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 1227.0
+offset_top = 65.0
+offset_right = 1267.0
+offset_bottom = 105.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.294118, 0.380392, 0.454902, 1)
+theme_override_colors/icon_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7ev2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l33gy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_choyg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wfsgf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhasm")
+icon = ExtResource("4_8e7mp")
+
+[node name="Toggles" type="Control" parent="Controls"]
+anchors_preset = 0
+offset_top = -7.0
+offset_right = 40.0
+offset_bottom = 33.0
+
+[node name="GuideButton" type="Button" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1316.0
+offset_top = 138.0
+offset_right = 1469.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "GUIDE"
+
+[node name="GuideCheckbox" type="CheckBox" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1293.0
+offset_top = 136.0
+offset_right = 1309.0
+offset_bottom = 153.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sco1y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6v50t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rg7jw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v6ht0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oykc8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b6btx")
+
+[node name="AnnotationButton" type="Button" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1338.0
+offset_top = 203.0
+offset_right = 1557.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "ANNOTATION"
+
+[node name="AnnotationCheckbox" type="CheckBox" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1293.0
+offset_top = 201.0
+offset_right = 1309.0
+offset_bottom = 218.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sco1y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6v50t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rg7jw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v6ht0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oykc8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b6btx")
+
+[node name="PositioningButton" type="Button" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1339.0
+offset_top = 268.0
+offset_right = 1580.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "POSITIONING"
+
+[node name="PositioningCheckbox" type="CheckBox" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1293.0
+offset_top = 265.0
+offset_right = 1309.0
+offset_bottom = 282.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sco1y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6v50t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rg7jw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v6ht0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oykc8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b6btx")
+
+[node name="TrailButton" type="Button" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1339.0
+offset_top = 334.0
+offset_right = 1449.0
+offset_bottom = 375.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "TRAIL"
+
+[node name="TrailCheckbox" type="CheckBox" parent="Controls/Toggles"]
+layout_mode = 0
+offset_left = 1293.0
+offset_top = 331.0
+offset_right = 1309.0
+offset_bottom = 348.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sco1y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6v50t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rg7jw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v6ht0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oykc8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b6btx")
+
+[node name="Maps" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -26.0
+offset_right = 30.0
+offset_bottom = 14.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Map1Button" type="Button" parent="Maps"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Maps/Map1Button"]
+position = Vector2(52.75, 57.7891)
+scale = Vector2(2.95313, 2.95313)
+texture = ExtResource("6_vfqcu")
+
+[node name="Map2Button" type="Button" parent="Maps"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 180.0
+offset_right = 259.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Maps/Map2Button"]
+position = Vector2(52.75, 57.7891)
+scale = Vector2(2.95313, 2.95313)
+texture = ExtResource("7_pto17")
+
+[node name="Map3Button" type="Button" parent="Maps"]
+modulate = Color(1, 1, 1, 0.12549)
+layout_mode = 0
+offset_left = 275.0
+offset_top = 180.0
+offset_right = 381.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+disabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Maps/Map3Button"]
+position = Vector2(52.75, 57.7891)
+scale = Vector2(2.95313, 2.95313)
+texture = ExtResource("5_tf7pn")
+
+[node name="Knights" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Knight1" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 3.825
+anchor_bottom = 3.825
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight1"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("8_3ysvc")
+
+[node name="Knight2" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.025
+anchor_top = 3.825
+anchor_right = 3.025
+anchor_bottom = 3.825
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight2"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("10_7374h")
+
+[node name="Knight3" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.075
+anchor_top = 3.825
+anchor_right = 6.075
+anchor_bottom = 3.825
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight3"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("11_621h8")
+
+[node name="Knight4" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 7.125
+anchor_bottom = 7.125
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight4"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("11_304wx")
+
+[node name="Knight5" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.025
+anchor_top = 7.125
+anchor_right = 3.025
+anchor_bottom = 7.125
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight5"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("12_nkpn1")
+
+[node name="Knight6" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.075
+anchor_top = 7.125
+anchor_right = 6.075
+anchor_bottom = 7.125
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight6"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("13_6g5oj")
+
+[node name="Knight7" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 10.4
+anchor_bottom = 10.4
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight7"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("14_arqp4")
+
+[node name="Knight8" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.025
+anchor_top = 10.4
+anchor_right = 3.025
+anchor_bottom = 10.4
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight8"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("15_oo6ag")
+
+[node name="Knight9" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.075
+anchor_top = 10.4
+anchor_right = 6.075
+anchor_bottom = 10.4
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight9"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("16_scvlb")
+
+[node name="Knight10" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 13.7
+anchor_bottom = 13.7
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight10"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("17_5e6ec")
+
+[node name="Knight11" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.025
+anchor_top = 13.7
+anchor_right = 3.025
+anchor_bottom = 13.7
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight11"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("18_t56qj")
+
+[node name="Knight12" type="Button" parent="Knights"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.075
+anchor_top = 13.7
+anchor_right = 6.075
+anchor_bottom = 13.7
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 295.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wu5g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Knights/Knight12"]
+position = Vector2(55.5312, 56.5313)
+scale = Vector2(6.05859, 6.05859)
+texture = ExtResource("8_thg3o")
+
+[node name="Annotation" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="8" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 76.0
+offset_right = 416.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "8"
+
+[node name="7" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 172.0
+offset_right = 416.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "7"
+
+[node name="6" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 268.0
+offset_right = 416.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "6"
+
+[node name="5" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 364.0
+offset_right = 416.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "5"
+
+[node name="4" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 460.0
+offset_right = 416.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "4"
+
+[node name="3" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 556.0
+offset_right = 416.0
+offset_bottom = 608.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="2" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 652.0
+offset_right = 416.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "2"
+
+[node name="1" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 748.0
+offset_right = 416.0
+offset_bottom = 800.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="a" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 841.0
+offset_right = 493.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "a"
+
+[node name="b" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 841.0
+offset_right = 589.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "b"
+
+[node name="c" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 841.0
+offset_right = 685.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "c"
+
+[node name="d" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 841.0
+offset_right = 781.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "d"
+
+[node name="e" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 841.0
+offset_right = 877.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "e"
+
+[node name="f" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 841.0
+offset_right = 973.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "f"
+
+[node name="g" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 1041.0
+offset_top = 841.0
+offset_right = 1069.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "g"
+
+[node name="h" type="Label" parent="Annotation"]
+layout_mode = 0
+offset_left = 1137.0
+offset_top = 841.0
+offset_right = 1165.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "h"
+
+[node name="MoveHistory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 36.0
+offset_right = 40.0
+offset_bottom = 76.0
+
+[node name="Label" type="Label" parent="MoveHistory"]
+layout_mode = 0
+offset_left = 1354.0
+offset_top = 374.0
+offset_right = 1464.0
+offset_bottom = 415.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+text = "MOVES"
+
+[node name="History1" type="Label" parent="MoveHistory"]
+layout_mode = 0
+offset_left = 1235.0
+offset_top = 427.0
+offset_right = 1275.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 20
+text = "a1"
+
+[node name="History2" type="Label" parent="MoveHistory"]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 427.0
+offset_right = 1370.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 20
+text = "a1"
+
+[node name="History3" type="Label" parent="MoveHistory"]
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 427.0
+offset_right = 1460.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 20
+text = "a1"
+
+[node name="History4" type="Label" parent="MoveHistory"]
+layout_mode = 0
+offset_left = 1510.0
+offset_top = 427.0
+offset_right = 1550.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 20
+text = "a1"
+
+[connection signal="button_down" from="Controls/ZenButton" to="." method="_on_zen_button_button_down"]
+[connection signal="button_down" from="Controls/RestartButton" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="Controls/UndoButton" to="." method="_on_undo_button_down"]
+[connection signal="button_down" from="Controls/Toggles/GuideButton" to="." method="_on_guide_button_button_down"]
+[connection signal="pressed" from="Controls/Toggles/GuideCheckbox" to="." method="_on_guide_button_button_down"]
+[connection signal="button_down" from="Controls/Toggles/AnnotationButton" to="." method="_on_annotation_button_button_down"]
+[connection signal="pressed" from="Controls/Toggles/AnnotationCheckbox" to="." method="_on_annotation_button_button_down"]
+[connection signal="button_down" from="Controls/Toggles/PositioningButton" to="." method="_on_positioning_button_button_down"]
+[connection signal="pressed" from="Controls/Toggles/PositioningCheckbox" to="." method="_on_positioning_button_button_down"]
+[connection signal="button_down" from="Controls/Toggles/TrailButton" to="." method="_on_trail_button_button_down"]
+[connection signal="pressed" from="Controls/Toggles/TrailCheckbox" to="." method="_on_trail_button_button_down"]
+[connection signal="button_up" from="Maps/Map1Button" to="." method="change_map" binds= [1]]
+[connection signal="button_up" from="Maps/Map2Button" to="." method="change_map" binds= [2]]
+[connection signal="button_up" from="Maps/Map3Button" to="." method="change_map" binds= [3]]
+[connection signal="button_up" from="Knights/Knight1" to="." method="change_knight" binds= [1]]
+[connection signal="button_up" from="Knights/Knight2" to="." method="change_knight" binds= [2]]
+[connection signal="button_up" from="Knights/Knight3" to="." method="change_knight" binds= [3]]
+[connection signal="button_up" from="Knights/Knight4" to="." method="change_knight" binds= [4]]
+[connection signal="button_up" from="Knights/Knight5" to="." method="change_knight" binds= [5]]
+[connection signal="button_up" from="Knights/Knight6" to="." method="change_knight" binds= [6]]
+[connection signal="button_up" from="Knights/Knight7" to="." method="change_knight" binds= [7]]
+[connection signal="button_up" from="Knights/Knight8" to="." method="change_knight" binds= [8]]
+[connection signal="button_up" from="Knights/Knight9" to="." method="change_knight" binds= [9]]
+[connection signal="button_up" from="Knights/Knight10" to="." method="change_knight" binds= [10]]
+[connection signal="button_up" from="Knights/Knight11" to="." method="change_knight" binds= [11]]
+[connection signal="button_up" from="Knights/Knight12" to="." method="change_knight" binds= [12]]

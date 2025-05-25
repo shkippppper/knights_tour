@@ -1,0 +1,173 @@
+[gd_scene load_steps=21 format=3 uid="uid://b38crox7gfste"]
+
+[ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_2wr3c"]
+[ext_resource type="Script" path="res://Scripts/BoardLogic.gd" id="1_jfb8w"]
+[ext_resource type="FontFile" uid="uid://c4y1cjdm6xvmr" path="res://Fonts/8x8-pixel.ttf" id="3_0gojf"]
+[ext_resource type="Texture2D" uid="uid://lvci63kp8jdq" path="res://Sprites/UI/undo.png" id="4_8e7mp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go28b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oklgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4xc5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bp5os"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vao24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7ev2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l33gy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choyg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wfsgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhasm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sco1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6v50t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rg7jw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6ht0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oykc8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6btx"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2wr3c")
+
+[node name="Board" type="Node2D" parent="."]
+position = Vector2(465, 101)
+script = ExtResource("1_jfb8w")
+
+[node name="Scores" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="Scores"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 54.0
+offset_right = 128.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="HighScore" type="Label" parent="Scores"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 54.0
+offset_right = 298.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.870588, 0.827451, 0, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Score2" type="Label" parent="Scores"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 54.0
+offset_right = 89.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="HighScore2" type="Label" parent="Scores"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 54.0
+offset_right = 232.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.870588, 0.827451, 0, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 50
+text = "HS"
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RestartButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 1296.0
+offset_top = 71.0
+offset_right = 1449.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "RESTART"
+
+[node name="UndoButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 1227.0
+offset_top = 65.0
+offset_right = 1267.0
+offset_bottom = 105.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.294118, 0.380392, 0.454902, 1)
+theme_override_colors/icon_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7ev2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l33gy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_choyg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wfsgf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhasm")
+icon = ExtResource("4_8e7mp")
+
+[node name="GuideButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 1316.0
+offset_top = 127.0
+offset_right = 1469.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_fonts/font = ExtResource("3_0gojf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_go28b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oklgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4xc5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bp5os")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vao24")
+text = "GUIDE"
+
+[node name="CheckBox" type="CheckBox" parent="Controls"]
+layout_mode = 0
+offset_left = 1293.0
+offset_top = 125.0
+offset_right = 1309.0
+offset_bottom = 142.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.294917, 0.381991, 0.456857, 1)
+theme_override_colors/font_hover_color = Color(0.423529, 0.529412, 0.615686, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sco1y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6v50t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rg7jw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v6ht0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oykc8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b6btx")
+
+[connection signal="button_down" from="Controls/RestartButton" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="Controls/UndoButton" to="." method="_on_undo_button_down"]
+[connection signal="button_down" from="Controls/GuideButton" to="." method="_on_guide_button_button_down"]
+[connection signal="pressed" from="Controls/CheckBox" to="." method="_on_guide_button_button_down"]
